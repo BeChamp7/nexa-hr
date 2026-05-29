@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html[dir='rtl'] body {
+        font-family: theme('fontFamily.urdu');
+    }
+
+    /* Slightly looser line-height keeps Nastaliq script readable. */
+    html[dir='rtl'] {
+        line-height: 2;
+    }
+}
+
+@layer components {
+    .sidebar-link {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white;
+    }
+
+    .sidebar-link-active {
+        @apply bg-brand-600 text-white shadow-sm hover:bg-brand-600 hover:text-white;
+    }
+
+    .stat-card {
+        @apply rounded-2xl border border-slate-200 bg-white p-5 shadow-card;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+        @apply w-full rounded-lg border-slate-300 text-sm text-slate-900 shadow-sm focus:border-brand-500 focus:ring-brand-500;
+    }
+
+    .form-label {
+        @apply mb-1.5 block text-sm font-medium text-slate-700;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-primary {
+        @apply btn bg-brand-600 text-white hover:bg-brand-700 focus:ring-brand-500;
+    }
+
+    .btn-secondary {
+        @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-brand-500;
+    }
+
+    .btn-danger {
+        @apply btn bg-rose-600 text-white hover:bg-rose-700 focus:ring-rose-500;
+    }
+
+    .badge {
+        @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium;
+    }
+}
